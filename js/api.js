@@ -28,6 +28,10 @@ export function deleteToDo(todoId) {
 
 export function updateToDo(todoId, todo) {
   return axios
-    .put(API_URL + "/" + todoId, { title: todo }, { headers: API_HEADERS })
+    .put(
+      API_URL + "/" + todoId,
+      { title: todo, done: false },
+      { headers: API_HEADERS }
+    )
     .then((res) => res.data);
 }
