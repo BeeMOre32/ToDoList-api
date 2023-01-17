@@ -11,6 +11,10 @@
   },
   "devDependencies": {
     "axios": "^1.2.2",
+    "buffer": "^5.5.0",
     "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "sortablejs": "^1.15.0"
   }
 }
