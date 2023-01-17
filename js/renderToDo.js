@@ -2,13 +2,16 @@ import { deleteToDo, updateToDo } from "./api";
 
 const toDoListEl = document.querySelector(".todo-list__list");
 const doneListEl = document.querySelector(".done-list__list");
+
 export function renderToDo(data) {
   toDoListEl.innerHTML = "";
   doneListEl.innerHTML = "";
+
   data.forEach((item) => {
-    const div = document.createElement("div");
-    div.classList.add("todo-item");
-    div.id = item.id;
+    const li = document.createElement("li");
+    li.classList.add("todo-item");
+    li.id = item.id;
+    li.dataset.done = item.done;
 
     const editBtn = document.createElement("button");
     editBtn.innerText = "✏️";
@@ -23,18 +26,18 @@ export function renderToDo(data) {
       await handleDeleteToDo(item.id);
     });
 
-    div.innerHTML = `
+    li.innerHTML = `
     <span class="text">${item.title}</span>
     `;
-    const buttonWrapper = document.createElement("div");
+    const buttonWrapper = document.createElement("li");
     buttonWrapper.classList.add("button-wrapper");
     buttonWrapper.append(editBtn, delBtn);
-    div.append(buttonWrapper);
+    li.append(buttonWrapper);
 
     if (item.done) {
-      doneListEl.appendChild(div);
+      doneListEl.appendChild(li);
     } else {
-      toDoListEl.appendChild(div);
+      toDoListEl.appendChild(li);
     }
   });
 }
@@ -47,8 +50,8 @@ async function handleDeleteToDo(deletedId) {
 
   yesBtn.addEventListener("click", async () => {
     await deleteToDo(deletedId);
-    const div = document.getElementById(deletedId);
-    div.remove();
+    const li = document.getElementById(deletedId);
+    li.remove();
     alertEl.classList.remove("active");
   });
   noBtn.addEventListener("click", () => {
@@ -60,7 +63,7 @@ async function handleUpdateToDo(todoId, todoTitle) {
   const data = await updateToDo(todoId, todoTitle);
   if (!data) {
   } else {
-    const div = document.getElementById(todoId);
-    div.querySelector(".text").innerText = todoTitle;
+    const li = document.getElementById(todoId);
+    li.querySelector(".text").innerText = todoTitle;
   }
 }

@@ -37,7 +37,23 @@ export function updateToDo(todoId, todo) {
   return axios
     .put(
       API_URL + "/" + todoId,
-      { title: todo, done: false },
+      { title: todo, done: false, order: 0 },
+      { headers: API_HEADERS }
+    )
+    .then((res) => res.data);
+}
+
+export function updateListOrder(todoIds) {
+  return axios
+    .put(API_URL + "/reorder", { todoIds: todoIds }, { headers: API_HEADERS })
+    .then((res) => res.data);
+}
+
+export function updateDone(toDoId, Title, Done) {
+  return axios
+    .put(
+      API_URL + "/" + toDoId,
+      { title: Title, done: Done },
       { headers: API_HEADERS }
     )
     .then((res) => res.data);
