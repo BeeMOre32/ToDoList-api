@@ -84,3 +84,9 @@ fabric.properties
 *.scss.map
 
 .idea/**
+
+node_modules/**
+
+.parcel-cache/**
+
+dist/**

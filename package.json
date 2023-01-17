@@ -1,0 +1,16 @@
+{
+  "name": "KDT4-M3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KDT1-FE/KDT4-M3.git",
+  "author": "BeeMOre32 <windowssart01@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "axios": "^1.2.2",
+    "parcel": "^2.8.2"
+  }
+}
