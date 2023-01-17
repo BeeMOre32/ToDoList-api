@@ -1,4 +1,5 @@
 import axios from "axios";
+import validationString from "./validation";
 
 const CONTENT_TYPE = "application/json";
 const API_KEY = "FcKdtJs202301";
@@ -17,6 +18,9 @@ export function fetchToDo() {
 }
 
 export function postToDo(toDo) {
+  if (!validationString(toDo)) {
+    return;
+  }
   return axios
     .post(API_URL, { title: toDo }, { headers: API_HEADERS })
     .then((res) => res.data);
@@ -27,6 +31,9 @@ export function deleteToDo(todoId) {
 }
 
 export function updateToDo(todoId, todo) {
+  if (!validationString(todo)) {
+    return;
+  }
   return axios
     .put(
       API_URL + "/" + todoId,

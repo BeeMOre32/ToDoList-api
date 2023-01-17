@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
@@ -123,15 +124,16 @@ body {
 }
 
 .alert {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   transition: 0.3s ease;
   position: absolute;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .alert .alert-container {
   position: absolute;
-  width: 500px;
+  width: 650px;
   height: 50px;
   margin: auto;
   display: flex;
@@ -140,16 +142,25 @@ body {
   background-color: #fff;
   padding: 15px;
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  transform: translateY(999%);
+}
+.alert .alert-container button {
+  font-size: 18px;
+  font-family: inherit;
+  margin-left: 10px;
+  border: none;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
 }
 .alert.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(15px);
 }
 .alert.active .alert-container {
-  transform: translateY(700%);
+  transform: translateY(50%);
 }
 
 /*# sourceMappingURL=styles.css.map */

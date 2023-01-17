@@ -1,8 +1,10 @@
 import { deleteToDo, updateToDo } from "./api";
 
-const toDoListEl = document.querySelector(".todo-list");
-const doneListEl = document.querySelector(".done-list");
+const toDoListEl = document.querySelector(".todo-list__list");
+const doneListEl = document.querySelector(".done-list__list");
 export function renderToDo(data) {
+  toDoListEl.innerHTML = "";
+  doneListEl.innerHTML = "";
   data.forEach((item) => {
     const div = document.createElement("div");
     div.classList.add("todo-item");
@@ -55,7 +57,10 @@ async function handleDeleteToDo(deletedId) {
 }
 
 async function handleUpdateToDo(todoId, todoTitle) {
-  await updateToDo(todoId, todoTitle);
-  const div = document.getElementById(todoId);
-  div.querySelector(".text").innerText = todoTitle;
+  const data = await updateToDo(todoId, todoTitle);
+  if (!data) {
+  } else {
+    const div = document.getElementById(todoId);
+    div.querySelector(".text").innerText = todoTitle;
+  }
 }
