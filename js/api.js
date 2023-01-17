@@ -1,4 +1,4 @@
-import axios from "/axios";
+import axios from "../node_modules/axios";
 import validationString from "./validation";
 
 const CONTENT_TYPE = "application/json";
