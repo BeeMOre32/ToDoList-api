@@ -9,19 +9,34 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
     />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="create-todo">
-      <label>
-        <input type="text" class="create-todo__input" />
-      </label>
-      <button class="create-todo__button">Create</button>
+    <div class="container">
+      <div class="create-todo">
+        <label>
+          <input type="text" class="create-todo__input active" />
+          <span class="create-todo__span">할일을 적어주세요!</span>
+        </label>
+        <button class="create-todo__button">생성</button>
+      </div>
+      <div class="todo-list-wrapper">
+        <div class="todo-list">
+          <h3>해야함📖</h3>
+        </div>
+        <div class="done-list">
+          <h3>다했다!🎉</h3>
+        </div>
+      </div>
     </div>
-    <div class="todo-list">
-      <ul></ul>
-    </div>
-    <div class="done-list">
-      <ul></ul>
+    <div class="alert">
+      <div class="alert-container">
+        <span class="alert__text"
+          >해당하는 내용을 지우게 됩니다. 그렇게 하시겠습니까?</span
+        >
+        <button class="alert__yes">네</button>
+        <button class="alert__no">아니요</button>
+      </div>
     </div>
   </body>
 </html>

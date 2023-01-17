@@ -31,3 +31,15 @@ async function handleCreateToDo(todoTitle) {
   const data = await fetchToDo();
   renderToDo(data);
 }
+
+// Handling the Animation
+
+const createToDoSpanEl = document.querySelector(".create-todo__span");
+
+toDoInputEl.addEventListener("focus", () => {
+  createToDoSpanEl.classList.add("active");
+});
+
+toDoInputEl.addEventListener("blur", () => {
+  createToDoSpanEl.classList.remove("active");
+});
