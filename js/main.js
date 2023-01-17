@@ -37,9 +37,11 @@ async function handleCreateToDo(todoTitle) {
 const createToDoSpanEl = document.querySelector(".create-todo__span");
 
 toDoInputEl.addEventListener("focus", () => {
+  toDoInputEl.classList.add("active");
   createToDoSpanEl.classList.add("active");
 });
 
 toDoInputEl.addEventListener("blur", () => {
+  toDoInputEl.classList.remove("active");
   createToDoSpanEl.classList.remove("active");
 });
