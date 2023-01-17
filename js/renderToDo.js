@@ -4,8 +4,9 @@ const toDoListEl = document.querySelector(".todo-list");
 const doneListEl = document.querySelector(".done-list");
 export function renderToDo(data) {
   data.forEach((item) => {
-    const li = document.createElement("li");
-    li.id = item.id;
+    const div = document.createElement("div");
+    div.classList.add("todo-item");
+    div.id = item.id;
 
     const editBtn = document.createElement("button");
     editBtn.innerText = "✏️";
@@ -20,28 +21,41 @@ export function renderToDo(data) {
       await handleDeleteToDo(item.id);
     });
 
-    li.innerHTML = `
+    div.innerHTML = `
     <span class="text">${item.title}</span>
     `;
-
-    li.append(editBtn, delBtn);
+    const buttonWrapper = document.createElement("div");
+    buttonWrapper.classList.add("button-wrapper");
+    buttonWrapper.append(editBtn, delBtn);
+    div.append(buttonWrapper);
 
     if (item.done) {
-      doneListEl.appendChild(li);
+      doneListEl.appendChild(div);
     } else {
-      toDoListEl.appendChild(li);
+      toDoListEl.appendChild(div);
     }
   });
 }
 
 async function handleDeleteToDo(deletedId) {
-  await deleteToDo(deletedId);
-  const li = document.getElementById(deletedId);
-  li.remove();
+  const alertEl = document.querySelector(".alert");
+  alertEl.classList.add("active");
+  const yesBtn = document.querySelector(".alert__yes");
+  const noBtn = document.querySelector(".alert__no");
+
+  yesBtn.addEventListener("click", async () => {
+    await deleteToDo(deletedId);
+    const div = document.getElementById(deletedId);
+    div.remove();
+    alertEl.classList.remove("active");
+  });
+  noBtn.addEventListener("click", () => {
+    alertEl.classList.remove("active");
+  });
 }
 
 async function handleUpdateToDo(todoId, todoTitle) {
   await updateToDo(todoId, todoTitle);
-  const li = document.getElementById(todoId);
-  li.querySelector(".text").innerText = todoTitle;
+  const div = document.getElementById(todoId);
+  div.querySelector(".text").innerText = todoTitle;
 }
