@@ -42,33 +42,33 @@ deploy link: [Link](https://kdt-4-m3.vercel.app/)
 
 ### 할 일 추가
 
-[img1.gif](examples/example(1).gif)
+![img1.gif](examples/example(1).gif)
 
 할일을 먼저 입력하고 `enter` 키를 누르거나 옆에 있는 생성 버튼을 누르면 서버와 통신하여 할일을 추가합니다.
 
 ### 할 일 수정
 
-[img2.gif](examples/example(3).gif)
+![img2.gif](examples/example(3).gif)
 
 할일 옆에 있는 ✏️아이콘을 클릭하여 수정할 수 있는 알림창을 띄웁니다. 수정할 내용을 입력하고 `enter` 키를 누르거나 확인 버튼을 누르면 서버와 통신하여 수정합니다.
 
 ### 할 일 삭제
 
-[img3.gif](examples/example(4).gif)
+![img3.gif](examples/example(4).gif)
 
 할일 옆에 있는 ❌아이콘을 클릭하면 서버와 통신하여 삭제합니다. 먼저 삭제를 진행하기 전에 한번 더 확인하는 알림창을 띄워서 실수로 사용자가
 지울 수 있는 실수를 방지하였습니다.
 
 ### 할 일의 순서 변경
 
-[img4.gif](examples/example(5).gif)
+![img4.gif](examples/example(5).gif)
 
 할일을 드래그 앤 드랍을 하여 순서를 변경할 수 있습니다. 서버와 통신하여 변경된 순서를 저장하게 되지만 별도의 데이터를 가져오는 과정이 없이
 드래그 앤 드랍을 통하여 순서를 변경하여, 사용자가 느끼기에는 빠르게 순서가 변경되는 것처럼 느껴집니다.
 
 ### 할 일 완료
 
-[img5.gif](examples/example(6).gif)
+![img5.gif](examples/example(6).gif)
 
 할일을 드래그 하여 완료 영역에 드랍하면 서버와 통신하여 완료 한 것 으로 변경합니다. 별도의 서버의 데이터를 가져오는 과정이 없이
 드래그 앤 드랍을 통하여 완료로 변경하여, 사용자가 느끼기에는 빠르게 완료로 변경되는 것처럼 느껴집니다.
