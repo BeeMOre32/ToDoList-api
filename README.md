@@ -1,278 +1,98 @@
 # 📌 할 일 관리(Todo)
 
-- 과제 기한:
-  - 과제 수행 기간: 2023년 01월 16일(월) ~ 2023년 01월 27일(금)
-  - 서로 리뷰 기간: 2023년 01월 30일(월) ~ 2023년 02월 03일(금)
-- 내용:
-  - 주어진 API를 활용해 '[완성 예시](https://beautiful-daifuku-b9462c.netlify.app/)' 처럼 자유롭게 영화 검색 기능을 구현해보세요!
+deploy link: [Link](https://kdt-4-m3.vercel.app/)
 
-## 요구사항
+사용한 기술 스택
 
-필수 요구사항은 꼭 달성해야 하는 목표로, 수정/삭제는 불가하고 추가는 가능합니다.    
-선택 요구사항은 단순 예시로, 자유롭게 추가/수정/삭제해서 구현해보세요.  
-각 요구사항은 달성 후 마크다운에서 `- [x]`로 표시하세요.
+- Basic: HTML, SCSS, JavaScript
+- Deploy: Vercel
+- Bundler: Parcel
+- UsedLibrary: Axios, Sortable
+
+## Goal
 
 ### ❗ 필수
 
-- [ ] 할 일 목록(List)이 출력돼야 합니다.
-- [ ] 할 일 항목(Item)을 새롭게 추가할 수 있어야 합니다.
-- [ ] 할 일 항목을 수정할 수 있어야 합니다.
-- [ ] 할 일 항목을 삭제할 수 있어야 합니다.
-- [ ] jQuery, React, Vue 등 JS 라이브러리와 프레임워크는 사용하지 않아야 합니다.
-- [ ] 실제 서비스로 배포하고 접근 가능한 링크를 추가해야 합니다.
+- [x] 할 일 목록(List)이 출력돼야 합니다.
+- [x] 할 일 항목(Item)을 새롭게 추가할 수 있어야 합니다.
+- [x] 할 일 항목을 수정할 수 있어야 합니다.
+- [x] 할 일 항목을 삭제할 수 있어야 합니다.
+- [x] jQuery, React, Vue 등 JS 라이브러리와 프레임워크는 사용하지 않아야 합니다.
+- [x] 실제 서비스로 배포하고 접근 가능한 링크를 추가해야 합니다.
 
 ### ❔ 선택
 
-- [ ] 할 일 항목의 순서를 바꿀 수 있도록 만들어보세요.([SortableJS](http://sortablejs.github.io/Sortable/))
-- [ ] 할 일을 완료하지 않은 항목과 완료한 항목을 분류해서 출력해보세요.
+- [x] 할 일 항목의 순서를 바꿀 수 있도록 만들어보세요.([SortableJS](http://sortablejs.github.io/Sortable/))
+- [x] 할 일을 완료하지 않은 항목과 완료한 항목을 분류해서 출력해보세요.
 - [ ] 할 일을 완료한 항목을 한 번에 삭제할 수 있도록 만들어보세요.
 - [ ] 할 일 항목의 최신 수정일을 표시해보세요.
-- [ ] 할 일 목록이 출력되기 전에 로딩 애니메이션이 보이도록 만들어보세요.
-- [ ] 기타 동작이 완료되기 전에 로딩 애니메이션이 보이도록 만들어보세요.
-- [ ] 차별화가 가능하도록 프로젝트를 최대한 예쁘게 만들어보세요.
+- [x] 할 일 목록이 출력되기 전에 로딩 애니메이션이 보이도록 만들어보세요.
+- [x] 기타 동작이 완료되기 전에 로딩 애니메이션이 보이도록 만들어보세요.
+- [x] 차별화가 가능하도록 프로젝트를 최대한 예쁘게 만들어보세요.
 - [ ] 할 일과 관련된 기타 기능도 고려해보세요.
 
-## 과제 수행 방법
+## 구현한 기능
 
-1. 현재 저장소를 로컬에 클론(Clone)합니다.
-1. 자신의 본명(E.g, `ParkYoungWoong`)으로 브랜치를 생성합니다.(본명을 꼭 파스칼케이스로 표시하세요!)
-1. 자신의 본명 브랜치에서 과제를 수행합니다.
-1. 과제 수행이 끝나면, 자신의 본명 브랜치를 원격 저장소에 푸시(Push)합니다.(`main` 브랜치에 푸시하지 않도록 꼭 주의하세요!)
-1. 저장소에서 `main` 브랜치를 대상으로 Pull Request 생성하면, 과제 제출이 완료됩니다!(E.g, `main` <== `ParkYoungWoong`)
+### 페이지의 전체적인 모습
 
-- Pull Request에서 보이는 설명을 다른 사람들이 이해하기 쉽도록 꼼꼼하게 작성하세요!
-- 과제 수행 및 제출 과정에서 문제가 발생한 경우, 바로 강사에서 얘기해주세요!
-- 과제 제출 후 절대 병합(Merge)하지 않도록 주의하세요!
+![img.png](examples/example.png)
 
-## API 사용법
+그라데이션 배경화면을 활용하여 감각적인 느낌을 주었습니다.
 
-요청 주소(Endpoint)
+### 할 일 추가
 
-```curl
-https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-```
+[img1.gif](examples/example(1).gif)
 
-모든 API 요청(Request) `headers`에 아래 정보가 꼭 포함돼야 합니다!  
-`username`은 `KDT4_ParkYoungWoong`와 같이 본명을 포함해야 합니다!  
-확인할 수 없는 사용자의 DB 정보는 임의로 삭제될 수 있습니다!
+할일을 먼저 입력하고 `enter` 키를 누르거나 옆에 있는 생성 버튼을 누르면 서버와 통신하여 할일을 추가합니다.
 
-API 사용 예시:
+### 할 일 수정
 
-```js
-async function createTodo() {
-  const res = await fetch('https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'apikey': 'FcKdtJs202301',
-      'username': 'KDT4_ParkYoungWoong'
-    },
-    body: JSON.stringify({
-      title: '아침 먹기!'
-    })
-  })
-  const json = await res.json()
-  console.log(json)
+[img2.gif](examples/example(3).gif)
 
-  return json
-}
-```
+할일 옆에 있는 ✏️아이콘을 클릭하여 수정할 수 있는 알림창을 띄웁니다. 수정할 내용을 입력하고 `enter` 키를 누르거나 확인 버튼을 누르면 서버와 통신하여 수정합니다.
 
-### 목록 조회
+### 할 일 삭제
 
-전체 할 일 목록을 조회합니다.
+[img3.gif](examples/example(4).gif)
 
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-  \ -X 'GET'
-```
+할일 옆에 있는 ❌아이콘을 클릭하면 서버와 통신하여 삭제합니다. 먼저 삭제를 진행하기 전에 한번 더 확인하는 알림창을 띄워서 실수로 사용자가
+지울 수 있는 실수를 방지하였습니다.
 
-요청 데이터 타입 및 예시:
+### 할 일의 순서 변경
 
-- 없음
+[img4.gif](examples/example(5).gif)
 
-응답 데이터 타입 및 예시:
+할일을 드래그 앤 드랍을 하여 순서를 변경할 수 있습니다. 서버와 통신하여 변경된 순서를 저장하게 되지만 별도의 데이터를 가져오는 과정이 없이
+드래그 앤 드랍을 통하여 순서를 변경하여, 사용자가 느끼기에는 빠르게 순서가 변경되는 것처럼 느껴집니다.
 
-```ts
-type ResponseValue = Todo[] // 할 일 목록
+### 할 일 완료
 
-interface Todo {
-  id: string // 할 일 ID
-  order: number // 할 일 순서
-  title: string // 할 일 제목
-  done: boolean // 할 일 완료 여부
-  createdAt: string // 할 일 생성일
-  updatedAt: string // 할 일 수정일
-}
-```
+[img5.gif](examples/example(6).gif)
 
-```json
-[
-  {
-    "id": "mnIwaAPIAE1ayQmqekiR",
-    "order": 0,
-    "title": "JS 공부하기",
-    "done": false,
-    "createdAt": "2021-10-28T05:18:51.868Z",
-    "updatedAt": "2021-10-28T05:18:51.868Z"
-  },
-  {
-    "id": "tMzPImGoWtRdJ6yyVv2y",
-    "order": 1,
-    "title": "과제 PullRequest(PR) 생성",
-    "done": true,
-    "createdAt": "2021-10-28T04:16:53.980Z",
-    "updatedAt": "2021-10-28T09:40:17.955Z"
-  },
-  {
-    "id": "Rq8BebKihCgteHHhMIRS",
-    "order": 2,
-    "title": "API 스터디",
-    "done": false,
-    "createdAt": "2021-10-28T04:17:02.510Z",
-    "updatedAt": "2021-10-28T04:17:02.510Z"
-  }
-]
-```
+할일을 드래그 하여 완료 영역에 드랍하면 서버와 통신하여 완료 한 것 으로 변경합니다. 별도의 서버의 데이터를 가져오는 과정이 없이
+드래그 앤 드랍을 통하여 완료로 변경하여, 사용자가 느끼기에는 빠르게 완료로 변경되는 것처럼 느껴집니다.
 
-### 목록 순서 변경
+그리고 완료한 일들의 순서들도 변경이 가능하며 중간에 끼어들어도 순서가 올바르게 변경되어 저장됩니다.
 
-할 일 목록의 순서를 변경합니다.
+### 검증
 
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/reorder
-  \ -X 'PUT'
-```
+![img.png](examples/example(7).png)
 
-요청 데이터 타입 및 예시:
+할일을 입력할때, 별도의 `validation`을 걸어서 특정 문자열 조건을 만족하지 않다면, 사용자에게 알림으로 어떤 부분이 안되는지 알려줍니다.
+특수문자는 !? 까지 허용하고, 띄어쓰기는 제한이 없습니다. 또한, 할일의 최대 길이는 15자로 제한 됩니다. 이러한 조건을 만족하지 않을 경우 함수를 
+종료하게 됩니다.
 
-```ts
-interface RequestBody {
-  todoIds: string[] // 새롭게 정렬할 할 일 ID 목록 (필수!)
-}
-```
+### 로딩 애니메이션 구현
 
-```json
-{
-  "todoIds": [
-    "mnIwaAPIAE1ayQmqekiR",
-    "tMzPImGoWtRdJ6yyVv2y",
-    "GHrvr3LaPx1g7y2sNuaC",
-    "Rq8BebKihCgteHHhMIRS"
-  ]
-}
-```
+![img.png](examples/example(2).gif)
 
-응답 데이터 타입 및 예시:
+## 구현할 예정인 기능들..
 
-```ts
-type ResponseValue = true // 순서 변경 여부
-```
+- [] 미디어 쿼리 대응하여 모바일에서도 사용을 할 수 있도록 수정할 예정입니다.
+- [] 입력하는 창 옆에 `weather Api` 와 `day.js` 를 활용하여 현재 시간과 날씨를 보여주는 기능을 추가할 예정입니다.
 
-### 항목 추가
+## 느낀점
 
-할 일 항목을 새롭게 추가합니다.
+이렇게 api를 이용하여 CRUD 패턴을 구현해보았습니다. 실제로 존재하는 api를 사용하여 구현 한 적은 처음이여서 여러움도 있었고, 게다가
+다른 프레임워크를 사용하지 않고 오직 바닐라 자바스크립트와 몇개의 라이브러리를 사용하여 구현해보니, 신선한 경험이였습니다. 
 
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
-  \ -X 'POST'
-```
-
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-  title: string // 할 일 제목 (필수!)
-  order?: number // 할 일 순서
-}
-```
-
-```json
-{
-  "title": "KDT 과정 설계 미팅",
-  "order": 2
-}
-```
-
-응답 데이터 타입 및 예시:
-
-```ts
-interface ResponseValue {
-  id: string
-  order: number
-  title: string
-  done: boolean
-  createdAt: string
-  updatedAt: string
-}
-```
-
-```json
-{
-  "id": "7P8dOM4voAv8a8cfoeKZ",
-  "order": 0,
-  "title": "KDT 과정 설계 미팅",
-  "done": false,
-  "createdAt": "2021-10-29T07:20:02.749Z",
-  "updatedAt": "2021-10-29T07:20:02.749Z"
-}
-```
-
-### 항목 수정
-
-특정 할 일 항목을 수정합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
-  \ -X 'PUT'
-```
-
-요청 데이터 타입 및 예시:
-
-```ts
-interface RequestBody {
-  title: string // 할 일 제목 (필수!)
-  done: boolean // 할 일 완료 여부 (필수!)
-  order?: number // 할 일 순서
-}
-```
-
-```json
-{
-  "title": "Bootstrap 스타일 추가",
-  "done": false,
-  "order": 2
-}
-```
-
-응답 데이터 타입 및 예시:
-
-```json
-{
-  "id": "7P8dOM4voAv8a8cfoeKZ",
-  "title": "Bootstrap 스타일 추가",
-  "done": false,
-  "order": 2,
-  "createdAt": "2021-10-29T07:20:02.749Z",
-  "updatedAt": "2021-10-29T07:20:02.749Z"
-}
-```
-
-### 항목 삭제
-
-특정 할 일 항목을 삭제합니다.
-
-```curl
-curl https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
-  \ -X 'DELETE'
-```
-
-요청 데이터 타입 및 예시:
-
-- 없음
-
-응답 데이터 타입 및 예시:
-
-```ts
-type ResponseValue = true
-```
