@@ -12,14 +12,26 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/loading.css" />
+    <link rel="stylesheet" href="css/setting.css" />
   </head>
-  <body>
+  <body class="">
     <div class="clock"></div>
-
+    <div class="setting">⚙️</div>
+    <div class="setting-modal">
+      <div class="setting-modal__close">❌</div>
+      <div class="setting-modal__dark">
+        <label for="darkMode"> <span>Toggle DarkMode</span></label
+        ><input type="checkbox" id="darkMode" />
+      </div>
+      <div class="setting-modal__clock">
+        <label for="clockMode"> <span>Toggle Clock</span> </label
+        ><input type="checkbox" id="clockMode" />
+      </div>
+    </div>
     <div class="container">
       <div class="create-todo">
         <label>
-          <input type="text" class="create-todo__input active" />
+          <input type="text" class="create-todo__input" />
           <span class="create-todo__span">할일을 적어주세요!</span>
         </label>
         <button class="create-todo__button">생성</button>

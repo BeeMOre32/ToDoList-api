@@ -1,0 +1,80 @@
+.setting {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  font-size: 36px;
+  color: #2d3436;
+  cursor: pointer;
+}
+
+.setting-modal {
+  position: fixed;
+  top: 6%;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  border-top: 20px solid #dedede;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(150%);
+  transition: 0.3s ease;
+  z-index: 3;
+}
+.setting-modal.active {
+  transform: translateX(0);
+}
+.setting-modal .setting-modal__close {
+  position: absolute;
+  top: -7%;
+  right: 5%;
+  font-size: 20px;
+  cursor: pointer;
+}
+.setting-modal .setting-modal__dark {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.setting-modal .setting-modal__clock {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.invisible {
+  display: none;
+}
+
+.dark {
+  background-image: none;
+  background-color: #2c3e50;
+  color: #bdc3c7;
+}
+.dark .clock {
+  color: #bdc3c7;
+}
+.dark .setting {
+  color: #bdc3c7;
+}
+.dark .setting-modal {
+  border-top: 20px solid #bdc3c7;
+}
+.dark .setting-modal__dark {
+  color: #bdc3c7;
+}
+.dark .setting-modal__clock {
+  color: #bdc3c7;
+}
+.dark .setting-modal__close {
+  color: red;
+}
+
+/*# sourceMappingURL=setting.css.map */

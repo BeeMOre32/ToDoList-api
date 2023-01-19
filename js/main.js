@@ -1,11 +1,19 @@
 import { fetchToDo, postToDo } from "./api";
 import { renderToDo } from "./renderToDo";
-import { clockInterval } from "./clock";
+import { setClock } from "./clock";
+import {
+  handelSettingClose,
+  handelSettingOpen,
+  toggleClock,
+  toggleTheme,
+} from "./setting";
 
 const toDoInputEl = document.querySelector(".create-todo__input");
 const createToDoBtn = document.querySelector(".create-todo__button");
 const toDoListEl = document.querySelector(".todo-list__list");
 const doneListEl = document.querySelector(".done-list__list");
+
+setInterval(setClock, 1000);
 
 let inputValue = "";
 
@@ -67,4 +75,28 @@ export function handlingLoading() {
   }
 }
 
-clockInterval;
+// Handling the setting Modal
+
+const settingEl = document.querySelector(".setting");
+const settingModalEl = document.querySelector(".setting-modal");
+const settingCloseEl = document.querySelector(".setting-modal__close");
+const toggleClockEl = document.querySelector("#clockMode");
+settingEl.addEventListener("click", () => {
+  handelSettingOpen(settingModalEl);
+});
+
+settingCloseEl.addEventListener("click", () => {
+  handelSettingClose(settingModalEl);
+});
+
+// Handling the toggle clock
+toggleClockEl.addEventListener("change", () => {
+  toggleClock();
+});
+
+// Handling the toggle theme
+
+const toggleThemeEl = document.querySelector("#darkMode");
+toggleThemeEl.addEventListener("change", () => {
+  toggleTheme();
+});
