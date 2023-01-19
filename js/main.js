@@ -1,5 +1,6 @@
 import { fetchToDo, postToDo } from "./api";
 import { renderToDo } from "./renderToDo";
+import { clockInterval } from "./clock";
 
 const toDoInputEl = document.querySelector(".create-todo__input");
 const createToDoBtn = document.querySelector(".create-todo__button");
@@ -65,3 +66,5 @@ export function handlingLoading() {
     doneListEl.appendChild(loadingEl.cloneNode(true));
   }
 }
+
+clockInterval;
