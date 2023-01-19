@@ -119,6 +119,7 @@ body {
   align-items: center;
   width: 100%;
   padding: 10px;
+  cursor: pointer;
 }
 .todo-list-wrapper .todo-item span {
   font-size: 18px;
