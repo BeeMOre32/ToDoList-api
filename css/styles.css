@@ -185,4 +185,35 @@ body {
   transform: translateY(50%);
 }
 
+@media (max-width: 700px) {
+  body .clock {
+    font-size: 26px;
+  }
+  body .container {
+    min-width: 70%;
+  }
+  body .create-todo__input {
+    width: 180px !important;
+  }
+  body .create-todo__button {
+    width: 80px !important;
+  }
+  body .todo-list-wrapper {
+    flex-direction: column;
+  }
+  body .todo-list-wrapper .todo-list,
+body .todo-list-wrapper .done-list {
+    padding: 20px;
+    min-width: 100%;
+    min-height: 200px;
+  }
+  body .setting-modal {
+    width: 200px;
+    padding: 10px;
+  }
+  body .setting-modal label span {
+    font-size: 16px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -193,3 +193,38 @@ body {
     }
   }
 }
+
+@media (max-width: 700px) {
+  body {
+    .clock {
+      font-size: 26px;
+    }
+    .container {
+      min-width: 70%;
+    }
+    .create-todo__input {
+      width: 180px !important;
+    }
+    .create-todo__button {
+      width: 80px !important;
+    }
+    .todo-list-wrapper {
+      flex-direction: column;
+      .todo-list,
+      .done-list {
+        padding: 20px;
+        min-width: 100%;
+        min-height: 200px;
+      }
+    }
+    .setting-modal {
+      width: 200px;
+      padding: 10px;
+      label {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
