@@ -2,6 +2,7 @@ import { fetchToDo, postToDo } from "./api";
 import { renderToDo } from "./renderToDo";
 import { setClock } from "./clock";
 import {
+  applySettingsWindowLoaded,
   handelSettingClose,
   handelSettingOpen,
   toggleClock,
@@ -21,6 +22,7 @@ window.onload = async () => {
   handlingLoading();
   const data = await fetchToDo();
   renderToDo(data);
+  applySettingsWindowLoaded();
 };
 
 toDoInputEl.addEventListener("input", (e) => {
