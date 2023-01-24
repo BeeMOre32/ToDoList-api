@@ -196,6 +196,7 @@ body {
 
 @media (max-width: 700px) {
   body {
+    overflow: hidden;
     .clock {
       font-size: 26px;
     }
@@ -206,15 +207,22 @@ body {
       width: 180px !important;
     }
     .create-todo__button {
-      width: 80px !important;
+      width: 50px !important;
+      display: none;
     }
     .todo-list-wrapper {
       flex-direction: column;
+      h3 {
+        font-size: 20px;
+      }
       .todo-list,
       .done-list {
         padding: 20px;
         min-width: 100%;
         min-height: 200px;
+        span {
+          font-size: 16px;
+        }
       }
     }
     .setting-modal {
@@ -224,6 +232,23 @@ body {
         span {
           font-size: 16px;
         }
+      }
+    }
+  }
+  .alert {
+    .alert-container {
+      transform: translateX(999%);
+      width: 300px;
+      height: 150px;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 20px;
+    }
+    &.active {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(15px);
+      .alert-container {
+        transform: translateX(0%);
       }
     }
   }

@@ -186,6 +186,9 @@ body {
 }
 
 @media (max-width: 700px) {
+  body {
+    overflow: hidden;
+  }
   body .clock {
     font-size: 26px;
   }
@@ -196,10 +199,14 @@ body {
     width: 180px !important;
   }
   body .create-todo__button {
-    width: 80px !important;
+    width: 50px !important;
+    display: none;
   }
   body .todo-list-wrapper {
     flex-direction: column;
+  }
+  body .todo-list-wrapper h3 {
+    font-size: 20px;
   }
   body .todo-list-wrapper .todo-list,
 body .todo-list-wrapper .done-list {
@@ -207,12 +214,32 @@ body .todo-list-wrapper .done-list {
     min-width: 100%;
     min-height: 200px;
   }
+  body .todo-list-wrapper .todo-list span,
+body .todo-list-wrapper .done-list span {
+    font-size: 16px;
+  }
   body .setting-modal {
     width: 200px;
     padding: 10px;
   }
   body .setting-modal label span {
     font-size: 16px;
+  }
+
+  .alert .alert-container {
+    transform: translateX(999%);
+    width: 300px;
+    height: 150px;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+  }
+  .alert.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+  }
+  .alert.active .alert-container {
+    transform: translateX(0%);
   }
 }
 
