@@ -1,11 +1,10 @@
 import axios from "../node_modules/axios";
 import validationString from "./validation";
 
-const CONTENT_TYPE = "application/json";
-const API_KEY = "FcKdtJs202301";
-const USERNAME = "KDT4_ChoeHawnSeok";
-const API_URL =
-  "https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos";
+const CONTENT_TYPE = process.env.CONTENT_TYPE;
+const API_KEY = process.env.API_KEY;
+const USERNAME = process.env.USERNAME;
+const API_URL = process.env.API_URL;
 
 const API_HEADERS = {
   "Content-Type": CONTENT_TYPE,
