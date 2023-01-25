@@ -3,7 +3,7 @@ import validationString from "./validation";
 
 const CONTENT_TYPE = process.env.CONTENT_TYPE;
 const API_KEY = process.env.API_KEY;
-const USERNAME = process.env.USERNAME;
+const USERNAME = process.env.USERNAMES;
 const API_URL = process.env.API_URL;
 
 const API_HEADERS = {
