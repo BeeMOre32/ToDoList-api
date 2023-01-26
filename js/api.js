@@ -1,9 +1,12 @@
+import validationString from "./validation";
+
 export async function getToDo() {
   const res = await fetch("/api/fetch").then((res) => res.json());
   return res.data;
 }
 
 export async function postToDo(toDo) {
+  if (!validationString(toDo)) return;
   const res = await fetch("/api/post", {
     method: "POST",
     body: JSON.stringify({ title: toDo }),
@@ -18,6 +21,7 @@ export function deleteToDo(todoId) {
 }
 
 export function updateToDo(todoId, todo) {
+  if (!validationString(todo)) return;
   return fetch("/api/update?id=" + todoId, {
     method: "PUT",
     body: JSON.stringify({ title: todo, done: false, order: 0 }),
