@@ -49,10 +49,10 @@ async function handleDeleteToDo(deletedId) {
   const noBtn = document.querySelector(".alert__no");
 
   yesBtn.addEventListener("click", async () => {
-    await deleteToDo(deletedId);
     const li = document.getElementById(deletedId);
     li.remove();
     alertEl.classList.remove("active");
+    await deleteToDo(deletedId);
   });
   noBtn.addEventListener("click", () => {
     alertEl.classList.remove("active");

@@ -1,59 +1,39 @@
-import axios from "../node_modules/axios";
-import validationString from "./validation";
-
-const CONTENT_TYPE = process.env.CONTENT_TYPE;
-const API_KEY = process.env.API_KEY;
-const USERNAME = process.env.USERNAMES;
-const API_URL = process.env.API_URL;
-
-const API_HEADERS = {
-  "Content-Type": CONTENT_TYPE,
-  apikey: API_KEY,
-  username: USERNAME,
-};
-
-export function fetchToDo() {
-  return axios.get(API_URL, { headers: API_HEADERS }).then((res) => res.data);
+export async function getToDo() {
+  const res = await fetch("/api/fetch").then((res) => res.json());
+  return res.data;
 }
 
-export function postToDo(toDo) {
-  if (!validationString(toDo)) {
-    return;
-  }
-  return axios
-    .post(API_URL, { title: toDo }, { headers: API_HEADERS })
-    .then((res) => res.data);
+export async function postToDo(toDo) {
+  const res = await fetch("/api/post", {
+    method: "POST",
+    body: JSON.stringify({ title: toDo }),
+  });
+  return res.json();
 }
 
 export function deleteToDo(todoId) {
-  return axios.delete(API_URL + "/" + todoId, { headers: API_HEADERS });
+  fetch("/api/delete?id=" + todoId, {
+    method: "DELETE",
+  }).then((r) => r.json());
 }
 
 export function updateToDo(todoId, todo) {
-  if (!validationString(todo)) {
-    return;
-  }
-  return axios
-    .put(
-      API_URL + "/" + todoId,
-      { title: todo, done: false, order: 0 },
-      { headers: API_HEADERS }
-    )
-    .then((res) => res.data);
+  return fetch("/api/update?id=" + todoId, {
+    method: "PUT",
+    body: JSON.stringify({ title: todo, done: false, order: 0 }),
+  }).then((r) => r.json());
 }
 
-export function updateListOrder(todoIds) {
-  return axios
-    .put(API_URL + "/reorder", { todoIds: todoIds }, { headers: API_HEADERS })
-    .then((res) => res.data);
+export async function updateListOrder(todoIds) {
+  return await fetch("/api/reorder", {
+    method: "PUT",
+    body: JSON.stringify({ todoIds: todoIds }),
+  }).then((r) => r.json());
 }
 
-export function updateDone(toDoId, Title, Done) {
-  return axios
-    .put(
-      API_URL + "/" + toDoId,
-      { title: Title, done: Done },
-      { headers: API_HEADERS }
-    )
-    .then((res) => res.data);
+export async function updateDone(todoId, todo, done) {
+  return await fetch("/api/updatedone?id=" + todoId, {
+    method: "PUT",
+    body: JSON.stringify({ title: todo, done: done }),
+  }).then((r) => r.json());
 }

@@ -1,4 +1,3 @@
-import { fetchToDo, postToDo } from "./api";
 import { renderToDo } from "./renderToDo";
 import { setClock } from "./clock";
 import {
@@ -8,6 +7,7 @@ import {
   toggleClock,
   toggleTheme,
 } from "./setting";
+import { getToDo, postToDo } from "./api";
 
 const toDoInputEl = document.querySelector(".create-todo__input");
 const createToDoBtn = document.querySelector(".create-todo__button");
@@ -20,7 +20,7 @@ let inputValue = "";
 
 window.onload = async () => {
   handlingLoading();
-  const data = await fetchToDo();
+  const data = await getToDo();
   renderToDo(data);
   applySettingsWindowLoaded();
 };
@@ -46,7 +46,7 @@ createToDoBtn.addEventListener("click", async () => {
 async function handleCreateToDo(todoTitle) {
   toDoInputEl.value = "";
   await postToDo(todoTitle);
-  const data = await fetchToDo();
+  const data = await getToDo();
   renderToDo(data);
 }
 

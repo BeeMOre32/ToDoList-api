@@ -1,5 +1,5 @@
 import sortable from "sortablejs";
-import { updateDone, updateListOrder } from "./api";
+import { updateListOrder, updateDone } from "./api";
 
 const toDoListEl = document.querySelector(".todo-list__list");
 const doneListEl = document.querySelector(".done-list__list");
