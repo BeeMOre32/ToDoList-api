@@ -7,6 +7,7 @@ deploy link: [Link](https://kdt-4-m3.vercel.app/)
 
 - Basic: HTML, SCSS, JavaScript
 - Deploy: Vercel
+- serverLessFunction: Vercel Serverless Function
 - Bundler: Parcel
 - UsedLibrary: Axios, Sortable
 
@@ -100,6 +101,12 @@ deploy link: [Link](https://kdt-4-m3.vercel.app/)
 ![img.png](examples/example(9).gif)
 
 위의 설정에서 다크모드를 설정할 수 있습니다. 다크모드에 돌입시 해당하는 테마가 적용됩니다. 
+
+### 서버리스 펑션
+
+![img.png](examples/example(10).png)
+
+vercel serverless function을 통해서 미들웨어에서 api를 요청하도록 변경하여 apiKey 헤더 등등 민감한 정보들을 완벽하게 숨길 수 있습니다.
 
 ## 구현할 예정인 기능들..
 
